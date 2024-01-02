@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>Task List</title>
+</head>
+
+<body>
+    <main class="main-content">
+        <section class="task-section">
+            <h1 class="title">Task list</h1>
+            <div class="task-content">
+            <form class="task-form" action="" method="post">
+                <label class="label-task-text" for="task-text">new task</label>
+                <div class="task-input">
+                    <input required maxlength="50" class="task-text" type="text" id="task-text">
+                    <input class="add-task" type="submit" value="add task">
+                </div>
+            </form>
+            
+            <ul class="task-list">
+                <li class="task-item" data-count="1"><a class="task" href="#"><span class="completed checked">✔</span>dsadas</a></li>
+                <li class="task-item" data-count="2"><a class="task" href="#"><span class="completed">✔</span>dsadas</a></li>
+            </ul>
+        </div>
+            <a class="save button">test</a>
+            <input class="test" type="button" value="test">
+        </section>
+    </main>
+</body>
+
+<script src="task_function.js"></script>
+
+</html>
