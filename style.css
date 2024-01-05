@@ -57,10 +57,10 @@ body {
 .task-input {
     margin: 0;
     display: inline-block;
-    
+
 }
 
-.task-input .task-text{
+.task-input .task-text {
     padding: 10px;
     box-sizing: border-box;
     height: 35px;
@@ -68,7 +68,7 @@ body {
     border: none;
     border-radius: 15px;
     box-shadow: 0 0 5px grey;
-    
+
 }
 
 .task-input .task-text:focus {
@@ -99,36 +99,85 @@ body {
     list-style: none;
 }
 
-/*task item*/
-
-.completed {
-    color: white;
+/*filter setting*/
+.filter {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    padding: 5px;
-    border-radius: 50%;
-    border: 1px solid black;
-    
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    list-style: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.completed.checked {
-    background-color: rgba(0, 128, 0, 0.775);
+.filter-item {
+    margin-right: 20px;
+}
+
+.filter-item:last-child {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.filter-item a {
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.filter-item a:hover {
+    animation: buttonAnimation 0.3s ease-in;
+    color: rgb(0, 0, 0, 0.7);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.filter-item a:active {
+    color: rgb(0, 0, 0, 0.5);
+}
+
+.filter-item.active a {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.filter-item.active a:hover {
+    animation: none;
+}
+
+/*task item*/
+.task-item.hidden {
+    display: none;
 }
 
 .task-item {
-    
+    display: flex;
+    align-items: center;
     word-wrap: break-word;
     margin-bottom: 10px;
     padding: 5px;
-    /* border-bottom: 2px solid rgba(211, 211, 211, 0.566); */
 }
 
 .task-item:last-child {
     margin-bottom: 0;
+}
+
+.task-item::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url(img/unchecked.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.task-item.completed {
+    text-decoration: line-through;
+}
+
+.task-item.completed::before {
+    background-image: url(img/checked.svg);
+
 }
 
 .task {
@@ -140,19 +189,22 @@ body {
 
 @keyframes buttonAnimation {
     from {
+        color: rgb(0, 0, 0);
         border-bottom: 1px solid rgba(136, 136, 136, 0);
     }
 
     to {
+        color: rgb(0, 0, 0, 0.7);
         border-bottom: 1px solid rgba(136, 136, 136, 1);
     }
-    
+
 }
 
-@keyframes addTask{
+@keyframes addTask {
     from {
         background-color: rgba(0, 255, 0, 0.4);
     }
+
     to {
         background-color: rgba(0, 255, 0, 0.3);
     }
