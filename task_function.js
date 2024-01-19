@@ -6,11 +6,11 @@ const allTask = document.getElementById('all');
 const unCompletedTask = document.getElementById('uncompleted');
 const ClearTask = document.getElementById('clear');
 
-window.addEventListener('beforeunload', function (event) {
+window.addEventListener('beforeunload', function () {
     taskList.querySelectorAll('.hidden').forEach(function (element) {
         element.classList.remove('hidden');
     });
-};
+});
 
 //create new element for task list
 formTask.onsubmit = function (evt) {
