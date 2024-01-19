@@ -37,7 +37,6 @@ allTask.onclick = function () {
     taskList.querySelectorAll('.hidden').forEach(function (element) {
         element.classList.remove('hidden');
     });
-    saveData();
 };
 
 unCompletedTask.onclick = function () {
@@ -45,7 +44,6 @@ unCompletedTask.onclick = function () {
     taskList.querySelectorAll('.completed').forEach(function (element) {
         element.classList.add('hidden');
     });
-    saveData();
 };
 
 ClearTask.onclick = function () {
