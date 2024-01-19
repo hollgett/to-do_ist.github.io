@@ -1,10 +1,16 @@
-let formTask = document.querySelector('.task-form');
-let taskList = document.querySelector('.task-list');
+const formTask = document.querySelector('.task-form');
+const taskList = document.querySelector('.task-list');
 taskList.innerHTML = localStorage.getItem('data');
 taskList.addEventListener('click', taskClick);
-let allTask = document.getElementById('all');
-let unCompletedTask = document.getElementById('uncompleted');
-let ClearTask = document.getElementById('clear');
+const allTask = document.getElementById('all');
+const unCompletedTask = document.getElementById('uncompleted');
+const ClearTask = document.getElementById('clear');
+
+window.addEventListener('beforeunload', function (event) {
+    taskList.querySelectorAll('.hidden').forEach(function (element) {
+        element.classList.remove('hidden');
+    });
+};
 
 //create new element for task list
 formTask.onsubmit = function (evt) {
